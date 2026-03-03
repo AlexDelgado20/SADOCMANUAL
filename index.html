@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SADOC - Portal de Documentación</title>
+    <link rel="icon" type="image/x-icon" href="imagenes/fav.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="portal.css">
+</head>
+
+<body>
+    <div class="portal-background"></div>
+    <div class="portal-container">
+        <header class="portal-header">
+            <h1 class="portal-title">SADOC</h1>
+            <p class="portal-subtitle">Selecciona el manual de producto que deseas consultar</p>
+        </header>
+
+        <div class="cards-grid">
+            <!-- 1. SADOC ADMINISTRACION -->
+            <a href="administracion.html" class="portal-card" tabindex="1">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                </div>
+                <h2>Administración</h2>
+                <p>Módulo contable completo: Cuenta CxC, CxP, Bancos, Inventario y Reportes Administrativos.</p>
+                <div class="card-btn">Abrir Manual <span>&rarr;</span></div>
+            </a>
+            <!-- 2. SADOC ESTANDAR -->
+            <a href="estandar.html" class="portal-card" tabindex="2">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path
+                            d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                        </path>
+                        <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                        <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                    </svg>
+                </div>
+                <h2>Estándar</h2>
+                <p>Facturación integral, Control de Stock, Cierre de Cajas y operativas básicas para tu negocio.</p>
+                <div class="card-btn">Abrir Manual <span>&rarr;</span></div>
+            </a>
+
+            <!-- 3. SADOC BASICO -->
+            <a href="#" class="portal-card" tabindex="3">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect x="3" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="14" width="7" height="7"></rect>
+                        <rect x="3" y="14" width="7" height="7"></rect>
+                    </svg>
+                </div>
+                <h2>Básico</h2>
+                <p>Módulo simplificado ideal para emprendedores tempranos y micro-comercios de venta rápida.</p>
+                <div class="card-btn" style="color: var(--color-text-soft);">Próximamente...</div>
+            </a>
+
+            <!-- 4. SADOC RESTAURANTE -->
+            <a href="restaurante.html" class="portal-card" tabindex="4">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"></path>
+                        <path d="M7 2v20"></path>
+                        <path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"></path>
+                    </svg>
+                </div>
+                <h2>Restaurante</h2>
+                <p>Control de Mesas, comandas, recetas, atención en salones, inventario de alimentos y reportes de
+                    ventas.</p>
+                <div class="card-btn">Abrir Manual <span>&rarr;</span></div>
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>

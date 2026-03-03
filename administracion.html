@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SADOC ADMINISTRACION</title>
+    <link rel="icon" type="image/x-icon" href="imagenes/fav.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-left" style="display: flex; align-items: center; gap: 0.5rem;">
+            <a href="index.html" class="back-to-portal" aria-label="Volver al Portal"
+                style="color: var(--color-text-soft); margin-right: 0.5rem; display: flex; align-items: center; text-decoration: none; padding: 0.5rem; border-radius: 6px; transition: var(--transition);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" style="width: 20px; height: 20px;"
+                    onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='currentColor'">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+            </a>
+            <button id="mobile-menu-btn" class="menu-toggle" aria-label="Abrir menú">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+            <div class="logo" style="cursor: pointer;"
+                onclick="document.querySelector('.logo').dispatchEvent(new Event('click'))">SADOC
+                <span>ADMINISTRACION</span>
+            </div>
+        </div>
+        <div class="search-container">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="search-input" placeholder="¿Qué deseas buscar?" autocomplete="off">
+            <div id="search-results" class="search-results hidden"></div>
+        </div>
+        <div class="header-right">
+            <!-- Espacio para acciones futuras -->
+        </div>
+    </header>
+
+    <div class="layout">
+        <!-- Sidebar Izquierdo -->
+        <aside class="sidebar-left">
+            <nav id="dynamic-menu" class="tree-menu"></nav>
+        </aside>
+
+        <!-- Contenido Principal -->
+        <main class="content-main welcome-mode" style="--welcome-bg: url('./assets/img/BienvContabilidad.png')">
+            <div id="content-area">
+                <div class="welcome-card">
+                    <img src="./assets/img/logo_cont.png" alt="Bienvenido a SADOC" class="welcome-image" />
+                    <h1>Bienvenido al Centro de Ayuda de SADOC Administración</h1>
+                    <p>Selecciona un módulo en el menú lateral o utiliza el buscador para encontrar lo que necesitas.
+                    </p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Índice Derecho -->
+        <aside class="sidebar-right">
+            <div class="toc-container">
+                <h3>En esta página</h3>
+                <nav id="toc-menu" class="toc-menu">
+                    <!-- Dinámico -->
+                </nav>
+            </div>
+        </aside>
+    </div>
+
+    <script src="docs_data/administracion/navigation.js"></script>
+    <script src="docs_data/administracion/search_index.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,241 @@
+:root {
+    --color-bg: #0f172a;
+    --color-card-bg: rgba(255, 255, 255, 0.05);
+    --color-card-border: rgba(255, 255, 255, 0.1);
+    --color-text: #f8fafc;
+    --color-text-soft: #94a3b8;
+    --color-primary: #38bdf8;
+    --color-secondary: #818cf8;
+    --radius: 20px;
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.portal-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.95)), url('./assets/img/BienvContabilidad.png');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    animation: zoomAmbient 20s infinite alternate ease-in-out;
+}
+
+@keyframes zoomAmbient {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+.portal-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.portal-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    animation: fadeDown 0.8s ease-out;
+}
+
+.portal-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #e0f2fe, #38bdf8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 4px 12px rgba(56, 189, 248, 0.3));
+}
+
+.portal-subtitle {
+    font-size: 1.25rem;
+    color: var(--color-text-soft);
+    font-weight: 400;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    width: 100%;
+}
+
+.portal-card {
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-card-border);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: var(--radius);
+    padding: 2.5rem 2rem;
+    text-decoration: none;
+    color: var(--color-text);
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    animation: fadeUp 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.portal-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.portal-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.portal-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.portal-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.portal-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+    opacity: 0;
+    transition: var(--transition);
+    pointer-events: none;
+}
+
+.portal-card[href="#"] {
+    cursor: default;
+}
+
+.portal-card:hover:not([href="#"]),
+.portal-card:focus:not([href="#"]) {
+    transform: translateY(-10px);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(56, 189, 248, 0.1);
+    outline: none;
+}
+
+.portal-card:hover:not([href="#"])::before,
+.portal-card:focus:not([href="#"])::before {
+    opacity: 1;
+}
+
+.card-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    background: rgba(56, 189, 248, 0.1);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+    transition: var(--transition);
+}
+
+.portal-card:hover:not([href="#"]) .card-icon {
+    background: var(--color-primary);
+    color: #0f172a;
+    transform: scale(1.1);
+}
+
+.portal-card h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    z-index: 1;
+}
+
+.portal-card p {
+    font-size: 0.95rem;
+    color: var(--color-text-soft);
+    margin-bottom: 2rem;
+    flex-grow: 1;
+    z-index: 1;
+}
+
+.card-btn {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 1;
+    transition: var(--transition);
+}
+
+.portal-card:hover:not([href="#"]) .card-btn {
+    gap: 1rem;
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .portal-title {
+        font-size: 2.5rem;
+    }
+
+    .portal-container {
+        padding: 3rem 1.5rem;
+    }
+}
